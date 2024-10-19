@@ -133,6 +133,7 @@
     <ClCompile Include="FixedVector.cpp" />
     <ClCompile Include="FlatMap.cpp" />
     <ClCompile Include="MemoryAllocator.cpp" />
+    <ClCompile Include="ObjectDB.cpp" />
     <ClCompile Include="ReferenceCounter.cpp" />
     <ClCompile Include="SharedPointer.cpp" />
     <ClCompile Include="Vector.cpp" />
@@ -145,6 +146,7 @@
     <ClInclude Include="FixedVector.h" />
     <ClInclude Include="FlatMap.h" />
     <ClInclude Include="MemoryAllocator.h" />
+    <ClInclude Include="ObjectDB.h" />
     <ClInclude Include="ReferenceCounter.h" />
     <ClInclude Include="SharedPointer.h" />
     <ClInclude Include="Vector.h" />

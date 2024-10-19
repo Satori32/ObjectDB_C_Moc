@@ -1,3 +1,4 @@
+#pragma once
 #include <stdio.h>
 #include <stdint.h>
 
@@ -5,19 +6,20 @@
 #include "SharedPointer.h"
 #include "Any.h"
 #include "FixedFlatMap.h"
+
 struct Person {
 	FixedUTF8<32> S;
 	size_t Age = 0;
 	bool IsMan = false;
 
 };
-
 template<class T>
 struct Arrow {
 	SharedPointer<T> Arrow;
 	intmax_t Weight = 0;
 };
-template<class T,size_t Ar,size_t FMap,size_t FVec>
+
+template<class T, size_t Ar, size_t FMap, size_t FVec>
 struct Portrait {
 	SharedPointer<T> P;
 	FixedVector<Arrow<T>, Ar> Arrow;
@@ -25,7 +27,6 @@ struct Portrait {
 	FixedVector<Any, FVec> Vector;
 	Any Iiwake;
 };
-
 static const size_t A = 20;
 static const size_t M = 40;
 static const size_t V = 40;
@@ -37,47 +38,21 @@ struct ObjectDB {
 	Any Label;
 	Any Iiawke;
 };
-template<class P,size_t N>
+template<class P, size_t N>
 struct FixedObjectDB {
-	FixedVector<P,N> V;
+	FixedVector<P, N> V;
 	Any Label;
 	Any Iiawke;
 };
-template<class Idx,class P>
+template<class Idx, class P>
 struct ObjectDBF {
-	FlatMap<Idx,P> M;
+	FlatMap<Idx, P> M;
 	Any Label;
 	Any Iiawke;
 };
-template<class Idx,class P,size_t N>
+template<class Idx, class P, size_t N>
 struct FixedObjectDBF {
-	FixedFlatMap<Idx,P,N> M;
+	FixedFlatMap<Idx, P, N> M;
 	Any Label;
 	Any Iiawke;
 };
-template<class Idx,class P>
- ObjectDBF ConstructObjectDBF<Any, Port>(16) {
-	 ObjectDBF<Any Port> O;
-	 O.M = ConstructFlatMap<Idx, Port>(16);
-	 O.Label = NULL:
-	 O.Iiwake = NULL;
-
-	 return O;
-}
- 
-template<class Idx,class P>
-bool Free(ObjectDBF<Idx, P>& In) {
-	Free(In.M);
-	In.Label = NULL;
-	In.Iiwake = NULL;
-
-	return true;
-}
-int main() {
-	ObjectDBF < Any, Port> O = ConstructObjectDBF<Any,Port>(16);
-	
-	
-	Free(O);
-
-	return 0:
-}
